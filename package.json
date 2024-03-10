@@ -1,0 +1,26 @@
+{
+  "name": "jwt-authentication",
+  "version": "1.0.0",
+  "description": "An authentication using JWT and nodejs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "npm run services:up && nodemon server.js",
+    "migrate:postgres": "dotenv -e .env.development -- npx prisma migrate dev",
+    "services:up": "docker compose up -d",
+    "services:down": "docker compose down",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
